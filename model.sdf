@@ -18,11 +18,12 @@
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <sensor name='baseUltrasonic' type='sonar'>
+        <visualize>1</visualize>
         <always_on>1</always_on>
-        <pose frame=''>-0.125 0.375 -0.085 1.5708 -0 0</pose>
+        <pose frame=''>.5 0 .15 0 -1.5707 0</pose>
         <sonar>
           <min>0</min>
-          <max>2</max>
+          <max>8</max>
           <radius>0.1</radius>
         </sonar>
       </sensor>
@@ -1759,14 +1760,14 @@
       <topic>/gazebo/frc/simulator/dio/3/4</topic>
       <units>degrees</units>
     </plugin>
-    <plugin name='ultrasonic_rangefinder' filename='librangefinder.so'>
+    <plugin name='baseUltrasonic_rangefinder' filename='librangefinder.so'>
       <sensor>baseUltrasonic</sensor>
       <topic>/gazebo/frc/simulator/analog/6</topic>
     </plugin>
     <plugin name='flipper_motor' filename='libdc_motor.so'>
       <joint>flipper_joint</joint>
       <topic>/gazebo/frc/simulator/pwm/5</topic>
-      <multiplier>-135.0</multiplier>
+      <multiplier>-165.0</multiplier>
     </plugin>
     <plugin name='flipper_pot' filename='libpotentiometer.so'>
       <joint>flipper_joint</joint>
