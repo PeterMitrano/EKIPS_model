@@ -22,9 +22,9 @@
         <always_on>1</always_on>
         <pose frame=''>.5 0 .15 0 -1.5707 0</pose>
         <sonar>
-          <min>0</min>
+          <min>1.5</min>
           <max>8</max>
-          <radius>0.1</radius>
+          <radius>0.2</radius>
         </sonar>
       </sensor>
       <visual name='visual'>
