@@ -1315,15 +1315,7 @@
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
-        <limit>
-          <lower>-1.79769e+308</lower>
-          <upper>1.79769e+308</upper>
-          <effort>-1</effort>
-          <velocity>-1</velocity>
-        </limit>
         <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
           <damping>1</damping>
           <friction>0.5</friction>
         </dynamics>
@@ -1352,12 +1344,6 @@
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
-        <limit>
-          <lower>-1.79769e+308</lower>
-          <upper>1.79769e+308</upper>
-          <effort>-1</effort>
-          <velocity>-1</velocity>
-        </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -1447,12 +1433,6 @@
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
-        <limit>
-          <lower>-1.79769e+308</lower>
-          <upper>1.79769e+308</upper>
-          <effort>-1</effort>
-          <velocity>-1</velocity>
-        </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -1484,12 +1464,6 @@
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
-        <limit>
-          <lower>-1.79769e+308</lower>
-          <upper>1.79769e+308</upper>
-          <effort>-1</effort>
-          <velocity>-1</velocity>
-        </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -1730,6 +1704,7 @@
     <plugin name='clock' filename='libclock.so'>
       <topic>/gazebo/frc/time</topic>
     </plugin>
+<!--
     <plugin name='front_right_motor' filename='libdc_motor.so'>
       <joint>front_right_wheel_joint</joint>
       <topic>/gazebo/frc/simulator/pwm/1</topic>
@@ -1781,7 +1756,7 @@
     <plugin name='right_wrist_motor' filename='libdc_motor.so'>
       <joint>right_wrist_joint</joint>
       <topic>/gazebo/frc/simulator/pwm/6</topic>
-      <multiplier>10</multiplier>
+      <multiplier>0</multiplier>
     </plugin>
     <plugin name='right_wrist_pot' filename='libpotentiometer.so'>
       <joint>right_wrist_joint</joint>
@@ -1790,7 +1765,7 @@
     <plugin name='left_wrist_motor' filename='libdc_motor.so'>
       <joint>left_wrist_joint</joint>
       <topic>/gazebo/frc/simulator/pwm/7</topic>
-      <multiplier>10</multiplier>
+      <multiplier>0</multiplier>
     </plugin>
     <plugin name='left_wrist_pot' filename='libpotentiometer.so'>
       <joint>left_wrist_joint</joint>
@@ -1799,7 +1774,7 @@
     <plugin name='right_claw_motor' filename='libdc_motor.so'>
       <joint>right_claw_joint</joint>
       <topic>/gazebo/frc/simulator/pwm/8</topic>
-      <multiplier>20</multiplier>
+      <multiplier>0</multiplier>
     </plugin>
     <plugin name='right_claw_pot' filename='libpotentiometer.so'>
       <joint>right_claw_joint</joint>
@@ -1808,11 +1783,12 @@
     <plugin name='left_claw_motor' filename='libdc_motor.so'>
       <joint>left_claw_joint</joint>
       <topic>/gazebo/frc/simulator/pwm/9</topic>
-      <multiplier>20</multiplier>
+      <multiplier>0</multiplier>
     </plugin>
     <plugin name='left_claw_pot' filename='libpotentiometer.so'>
       <joint>left_claw_joint</joint>
       <topic>/gazebo/frc/simulator/analog/5</topic>
     </plugin>
+-->
   </model>
 </sdf>
