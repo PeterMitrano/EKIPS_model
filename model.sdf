@@ -1614,13 +1614,9 @@
         <limit>
           <lower>-3.141</lower>
           <upper>0.4</upper>
-          <effort>-1</effort>
-          <velocity>-1</velocity>
         </limit>
         <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-          <damping>0.2</damping>
+          <damping>0</damping>
           <friction>0</friction>
         </dynamics>
       </axis>
@@ -1704,7 +1700,6 @@
     <plugin name='clock' filename='libclock.so'>
       <topic>/gazebo/frc/time</topic>
     </plugin>
-<!--
     <plugin name='front_right_motor' filename='libdc_motor.so'>
       <joint>front_right_wheel_joint</joint>
       <topic>/gazebo/frc/simulator/pwm/1</topic>
@@ -1725,6 +1720,44 @@
       <topic>/gazebo/frc/simulator/pwm/4</topic>
       <multiplier>-10.0</multiplier>
     </plugin>
+    <plugin name='flipper_motor' filename='libdc_motor.so'>
+      <joint>flipper_joint</joint>
+      <topic>/gazebo/frc/simulator/pwm/5</topic>
+      <multiplier>-165.0</multiplier>
+    </plugin>
+    <plugin name='flipper_trigger' filename='libdc_motor.so'>
+      <joint>flipper_joint</joint>
+      <topic>/gazebo/frc/simulator/pwm/10</topic>
+      <multiplier>-200.0</multiplier>
+    </plugin>
+    <plugin name='right_wrist_motor' filename='libdc_motor.so'>
+      <joint>right_wrist_joint</joint>
+      <topic>/gazebo/frc/simulator/pwm/6</topic>
+      <multiplier>20</multiplier>
+    </plugin>
+    <plugin name='left_wrist_motor' filename='libdc_motor.so'>
+      <joint>left_wrist_joint</joint>
+      <topic>/gazebo/frc/simulator/pwm/7</topic>
+      <multiplier>20</multiplier>
+    </plugin>
+    <plugin name='left_claw_motor' filename='libdc_motor.so'>
+      <joint>left_claw_joint</joint>
+      <topic>/gazebo/frc/simulator/pwm/9</topic>
+      <multiplier>20</multiplier>
+    </plugin>
+    <plugin name='right_claw_motor' filename='libdc_motor.so'>
+      <joint>right_claw_joint</joint>
+      <topic>/gazebo/frc/simulator/pwm/8</topic>
+      <multiplier>20</multiplier>
+    </plugin>
+    <plugin name='right_claw_pot' filename='libpotentiometer.so'>
+      <joint>right_claw_joint</joint>
+      <topic>/gazebo/frc/simulator/analog/4</topic>
+    </plugin>
+    <plugin name='left_claw_pot' filename='libpotentiometer.so'>
+      <joint>left_claw_joint</joint>
+      <topic>/gazebo/frc/simulator/analog/5</topic>
+    </plugin>
     <plugin name='back_left_encoder' filename='libencoder.so'>
       <joint>back_right_wheel_joint</joint>
       <topic>/gazebo/frc/simulator/dio/1/2</topic>
@@ -1735,60 +1768,21 @@
       <topic>/gazebo/frc/simulator/dio/3/4</topic>
       <units>degrees</units>
     </plugin>
-    <plugin name='baseUltrasonic_rangefinder' filename='librangefinder.so'>
-      <sensor>baseUltrasonic</sensor>
-      <topic>/gazebo/frc/simulator/analog/6</topic>
-    </plugin>
-    <plugin name='flipper_motor' filename='libdc_motor.so'>
-      <joint>flipper_joint</joint>
-      <topic>/gazebo/frc/simulator/pwm/5</topic>
-      <multiplier>-165.0</multiplier>
-    </plugin>
-    <plugin name='flipper_pot' filename='libpotentiometer.so'>
-      <joint>flipper_joint</joint>
-      <topic>/gazebo/frc/simulator/analog/1</topic>
-    </plugin>
-    <plugin name='flipper_trigger' filename='libdc_motor.so'>
-      <joint>flipper_joint</joint>
-      <topic>/gazebo/frc/simulator/pwm/10</topic>
-      <multiplier>-200.0</multiplier>
-    </plugin>
-    <plugin name='right_wrist_motor' filename='libdc_motor.so'>
-      <joint>right_wrist_joint</joint>
-      <topic>/gazebo/frc/simulator/pwm/6</topic>
-      <multiplier>0</multiplier>
+    <plugin name='left_wrist_pot' filename='libpotentiometer.so'>
+      <joint>left_wrist_joint</joint>
+      <topic>/gazebo/frc/simulator/analog/3</topic>
     </plugin>
     <plugin name='right_wrist_pot' filename='libpotentiometer.so'>
       <joint>right_wrist_joint</joint>
       <topic>/gazebo/frc/simulator/analog/2</topic>
     </plugin>
-    <plugin name='left_wrist_motor' filename='libdc_motor.so'>
-      <joint>left_wrist_joint</joint>
-      <topic>/gazebo/frc/simulator/pwm/7</topic>
-      <multiplier>0</multiplier>
+    <plugin name='flipper_pot' filename='libpotentiometer.so'>
+      <joint>flipper_joint</joint>
+      <topic>/gazebo/frc/simulator/analog/1</topic>
     </plugin>
-    <plugin name='left_wrist_pot' filename='libpotentiometer.so'>
-      <joint>left_wrist_joint</joint>
-      <topic>/gazebo/frc/simulator/analog/3</topic>
+    <plugin name='baseUltrasonic_rangefinder' filename='librangefinder.so'>
+      <sensor>baseUltrasonic</sensor>
+      <topic>/gazebo/frc/simulator/analog/6</topic>
     </plugin>
-    <plugin name='right_claw_motor' filename='libdc_motor.so'>
-      <joint>right_claw_joint</joint>
-      <topic>/gazebo/frc/simulator/pwm/8</topic>
-      <multiplier>0</multiplier>
-    </plugin>
-    <plugin name='right_claw_pot' filename='libpotentiometer.so'>
-      <joint>right_claw_joint</joint>
-      <topic>/gazebo/frc/simulator/analog/4</topic>
-    </plugin>
-    <plugin name='left_claw_motor' filename='libdc_motor.so'>
-      <joint>left_claw_joint</joint>
-      <topic>/gazebo/frc/simulator/pwm/9</topic>
-      <multiplier>0</multiplier>
-    </plugin>
-    <plugin name='left_claw_pot' filename='libpotentiometer.so'>
-      <joint>left_claw_joint</joint>
-      <topic>/gazebo/frc/simulator/analog/5</topic>
-    </plugin>
--->
   </model>
 </sdf>
